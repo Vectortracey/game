@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Mos\Router;
 
+use Webbprogrammering\Game21\Game21;
+
 use function Mos\Functions\{
     destroySession,
     redirectTo,
@@ -55,6 +57,27 @@ class Router
             ];
             $body = renderView("layout/page.php", $data);
             sendResponse($body);
+            return;
+        } else if ($method === "GET" && $path === "/game21") {
+            $game = new Game21();
+            $game->resetGame();
+
+            return;
+        } else if ($method === "POST" && $path === "/game21") {
+            $game = new Game21();
+            $game->clearHistory();
+            $game->resetGame();
+
+            return;
+        } else if ($method === "POST" && $path === "/game21?started=go") {
+            $game = new Game21();
+            $game->playerRoll();
+
+            return;
+        } else if ($method === "POST" && $path === "/game21?started=stop") {
+            $game = new Game21();
+            $game->botRoll();
+
             return;
         }
 

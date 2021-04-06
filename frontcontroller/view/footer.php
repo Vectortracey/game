@@ -1,6 +1,6 @@
 </main>
 <footer>
-    <p>This is the footer.</p>
+    <p>MVC-course in Webbprograming @ BTH.</p>
 </footer>
 </body>
 </html>

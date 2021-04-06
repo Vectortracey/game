@@ -4,8 +4,8 @@
  * Bootstrap the framework and handle the request and send the response.
  */
 
-declare(strict_types=1);
 
+declare(strict_types=1);
 use Mos\Router\Router;
 use function Mos\Functions\getRoutePath;
 
